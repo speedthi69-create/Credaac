@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Send, Loader2 } from 'lucide-react';
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { trackEvent } from '../utils/analytics';
 
 interface ContactFormModalProps {
   isOpen: boolean;
@@ -80,6 +81,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
     }
 
     setIsSubmitting(true);
+    trackEvent({ event: 'lead_form_submit', name: nameValid, email: emailValid });
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);

@@ -1,16 +1,17 @@
+import { memo } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
-export default function Hero() {
+const Hero = memo(function Hero() {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-blue-950 text-white">
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-900 opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-900 opacity-90 transform-gpu" />
         
         {/* Subtle grid pattern overlay */}
         <div 
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.03] transform-gpu"
           style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}
         />
 
@@ -21,7 +22,7 @@ export default function Hero() {
             opacity: [0.3, 0.5, 0.3],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-40 -right-40 w-[800px] h-[800px] rounded-full bg-blue-500/20 blur-[100px]" 
+          className="absolute -top-40 -right-40 w-[800px] h-[800px] rounded-full bg-blue-500/20 blur-[100px] transform-gpu will-change-transform" 
         />
         
         <motion.div 
@@ -30,7 +31,7 @@ export default function Hero() {
             opacity: [0.2, 0.4, 0.2],
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-[-20%] -left-20 w-[600px] h-[600px] rounded-full bg-green-500/20 blur-[100px]" 
+          className="absolute bottom-[-20%] -left-20 w-[600px] h-[600px] rounded-full bg-green-500/20 blur-[100px] transform-gpu will-change-transform" 
         />
 
         <motion.div 
@@ -39,15 +40,15 @@ export default function Hero() {
             opacity: [0.1, 0.3, 0.1],
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-[20%] left-[30%] w-[400px] h-[400px] rounded-full bg-cyan-400/10 blur-[80px]" 
+          className="absolute top-[20%] left-[30%] w-[400px] h-[400px] rounded-full bg-cyan-400/10 blur-[80px] transform-gpu will-change-transform" 
         />
 
         {/* Animated flow lines */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20 transform-gpu">
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute h-[1px] bg-gradient-to-r from-transparent via-blue-300 to-transparent w-full"
+              className="absolute h-[1px] bg-gradient-to-r from-transparent via-blue-300 to-transparent w-full transform-gpu will-change-transform"
               style={{ top: `${20 + i * 15}%`, left: '-100%' }}
               animate={{
                 left: ['100%', '-100%'],
@@ -130,8 +131,10 @@ export default function Hero() {
           >
             <div className="relative z-10 w-full h-full flex items-center justify-end">
               <img 
-                src="https://i.imgur.com/EoRu3gz.png" 
+                src="https://i.imgur.com/EoRu3gz.webp" 
                 alt="Pessoa sorrindo com celular" 
+                fetchPriority="high"
+                loading="eager"
                 className="w-auto h-full max-w-full max-h-[600px] object-contain rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10" 
                 referrerPolicy="no-referrer" 
               />
@@ -143,4 +146,6 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+});
+
+export default Hero;

@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Minus, Search } from 'lucide-react';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useTransition, memo } from 'react';
 import SectionBackground from './SectionBackground';
+import { trackEvent } from '../utils/analytics';
 
 const faqs = [
   {
@@ -30,9 +31,18 @@ const faqs = [
   }
 ];
 
-export default function FAQ() {
+const FAQ = memo(function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isPending, startTransition] = useTransition();
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    startTransition(() => {
+      setSearchQuery(val);
+    });
+    trackEvent({ event: 'faq_search', query: val });
+  };
 
   const filteredFaqs = useMemo(() => {
     if (!searchQuery.trim()) return faqs;
@@ -71,14 +81,14 @@ export default function FAQ() {
             <input
               type="text"
               placeholder="Buscar perguntas frequentes..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              defaultValue={searchQuery}
+              onChange={handleSearch}
               className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all placeholder:text-gray-400 shadow-sm"
             />
           </div>
         </motion.div>
 
-        <div className="space-y-4">
+        <div className={`space-y-4 ${isPending ? 'opacity-50 transition-opacity' : ''}`}>
           {filteredFaqs.length > 0 ? (
             filteredFaqs.map((faq, index) => {
               const isOpen = openIndex === index;
@@ -130,4 +140,6 @@ export default function FAQ() {
       </div>
     </section>
   );
-}
+});
+
+export default FAQ;
