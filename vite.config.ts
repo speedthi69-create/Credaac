@@ -13,10 +13,14 @@ export default defineConfig(() => {
       },
     },
     build: {
+      chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
           manualChunks: {
-            vendor: ['react', 'react-dom', 'motion/react', 'lucide-react', 'jspdf'],
+            'react-vendor': ['react', 'react-dom'],
+            'motion-vendor': ['motion/react', 'motion'],
+            'lucide-vendor': ['lucide-react'],
+            'jspdf-vendor': ['jspdf', 'html2canvas']
           },
         },
       },
