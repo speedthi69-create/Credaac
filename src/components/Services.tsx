@@ -8,11 +8,11 @@ const services = [
     icon: Wallet,
     title: "Microcrédito",
     subtitle: "Para quem precisa de capital rápido",
-    description: "Liberamos crédito de forma ágil, sem burocracia e sem consulta ao SPC/Serasa. Ideal para quem tem nome negativado e precisa de uma solução real.",
+    description: "Liberamos crédito de forma ágil e sem burocracia. Ideal para quem tem nome negativado e precisa de uma solução real.",
     bullets: [
       "Processo 100% online",
       "Aprovação rápida",
-      "Sem consulta ao Serasa/SPC"
+      "Análise justa"
     ]
   },
   {

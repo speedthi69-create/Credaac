@@ -7,7 +7,7 @@ import { trackEvent } from '../utils/analytics';
 const faqs = [
   {
     question: "Consigo crédito mesmo com o nome sujo?",
-    answer: "Sim! A Credaac não realiza consulta ao SPC ou Serasa. O processo de análise é feito com base em outros critérios, permitindo que negativados também tenham acesso ao crédito."
+    answer: "Sim! O processo de análise é feito com base em vários critérios, permitindo que negativados também possam ter acesso ao crédito."
   },
   {
     question: "Preciso ir a algum lugar pessoalmente?",

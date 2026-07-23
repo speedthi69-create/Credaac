@@ -1,11 +1,11 @@
 import { motion } from 'motion/react';
-import { SearchX, Ban, HeartHandshake, Laptop, FileSignature, Handshake } from 'lucide-react';
+import { User, Ban, HeartHandshake, Laptop, FileSignature, Handshake } from 'lucide-react';
 
 const differentials = [
   {
-    icon: SearchX,
-    title: "Sem consulta ao SPC/Serasa",
-    description: "Negativado? Sem problema. Aqui não fazemos consulta ao Serasa nem ao SPC. O que importa é a sua situação atual, não o passado."
+    icon: User,
+    title: "Análise justa e responsável",
+    description: "Aqui, cada situação é avaliada de forma completa e individualizada. Consideramos o que realmente importa: o seu momento atual e o seu potencial."
   },
   {
     icon: Ban,

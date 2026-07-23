@@ -79,7 +79,7 @@ export default function CTASection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-sm font-medium text-blue-200 flex flex-wrap justify-center gap-x-4 gap-y-2 opacity-80"
             >
-              <span>Sem consulta ao Serasa</span>
+              <span>Análise justa</span>
               <span className="hidden sm:inline">•</span>
               <span>Sem taxa de adesão</span>
               <span className="hidden sm:inline">•</span>

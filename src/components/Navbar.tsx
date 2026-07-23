@@ -29,6 +29,7 @@ export default function Navbar() {
             <a href="#servicos" className={`font-medium transition-colors ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-blue-100 hover:text-white'}`}>Serviços</a>
             <a href="#como-funciona" className={`font-medium transition-colors ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-blue-100 hover:text-white'}`}>Como Funciona</a>
             <a href="#diferenciais" className={`font-medium transition-colors ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-blue-100 hover:text-white'}`}>Diferenciais</a>
+            <a href="#depoimentos" className={`font-medium transition-colors ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-blue-100 hover:text-white'}`}>Depoimentos</a>
             <a href="#faq" className={`font-medium transition-colors ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-blue-100 hover:text-white'}`}>FAQ</a>
             <a 
               href="#contato" 
@@ -62,6 +63,7 @@ export default function Navbar() {
             <a href="#servicos" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Serviços</a>
             <a href="#como-funciona" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Como Funciona</a>
             <a href="#diferenciais" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Diferenciais</a>
+            <a href="#depoimentos" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">Depoimentos</a>
             <a href="#faq" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">FAQ</a>
             <div className="pt-4 pb-2">
               <a 

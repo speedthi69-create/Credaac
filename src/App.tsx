@@ -18,6 +18,7 @@ const Metrics = lazy(() => import('./components/Metrics'));
 const Services = lazy(() => import('./components/Services'));
 const HowItWorks = lazy(() => import('./components/HowItWorks'));
 const Differentials = lazy(() => import('./components/Differentials'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const CTASection = lazy(() => import('./components/CTASection'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -60,6 +61,9 @@ export default function App() {
         </Suspense>
         <Suspense fallback={<div className="h-24" />}>
           <Differentials />
+        </Suspense>
+        <Suspense fallback={<div className="h-24" />}>
+          <Testimonials />
         </Suspense>
         <Suspense fallback={<div className="h-24" />}>
           <FAQ />

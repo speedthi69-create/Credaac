@@ -73,7 +73,7 @@ const Hero = memo(function Hero() {
               transition={{ duration: 0.5 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6"
             >
-              Crédito rápido, sem burocracia e sem consulta ao <span className="text-green-400">SPC/Serasa</span>.
+              Crédito rápido e sem <span className="text-green-400">burocracia</span>.
             </motion.h1>
             
             <motion.p 
@@ -114,7 +114,7 @@ const Hero = memo(function Hero() {
               </div>
               <div className="flex items-center">
                 <CheckCircle2 className="h-5 w-5 text-green-400 mr-2" />
-                <span>Sem consulta ao Serasa</span>
+                <span>Análise justa</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle2 className="h-5 w-5 text-green-400 mr-2" />
@@ -131,7 +131,7 @@ const Hero = memo(function Hero() {
           >
             <div className="relative z-10 w-full h-full flex items-center justify-end">
               <img 
-                src="https://i.imgur.com/EoRu3gz.webp" 
+                src="https://i.imgur.com/mINuDjZ.webp" 
                 alt="Pessoa sorrindo com celular" 
                 fetchPriority="high"
                 loading="eager"
