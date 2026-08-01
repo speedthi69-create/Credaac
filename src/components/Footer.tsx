@@ -21,9 +21,9 @@ const Footer = memo(function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-6 items-start">
           <div className="text-center lg:text-left lg:col-span-1">
-            <span className="font-display font-bold text-3xl lg:text-4xl text-white tracking-tight block mb-2">
-              Credaac<span className="text-green-400">.</span>
-            </span>
+            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-block mb-4 transition-opacity hover:opacity-80">
+              <img src="https://i.imgur.com/tRooJ49.png" alt="Credaac Logo" className="h-10 lg:h-12 w-auto mx-auto lg:mx-0 brightness-0 invert" />
+            </a>
             <p className="text-blue-200 text-sm">
               Credaac Soluções Financeiras - Crédito com respeito, do jeito que deveria ser.
             </p>

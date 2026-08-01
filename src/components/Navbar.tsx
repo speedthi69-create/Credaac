@@ -18,9 +18,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className={`font-display font-bold text-3xl md:text-4xl tracking-tight transition-colors hover:opacity-80 ${isScrolled ? 'text-blue-900' : 'text-white'}`}>
-              Credaac
-              <span className="text-green-500">.</span>
+            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="transition-opacity hover:opacity-80 flex items-center">
+              <img src="https://i.imgur.com/tRooJ49.png" alt="Credaac Logo" className={`h-8 md:h-10 w-auto transition-all duration-300 ${isScrolled ? '' : 'brightness-0 invert'}`} />
             </a>
           </div>
           
