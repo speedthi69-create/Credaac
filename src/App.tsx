@@ -12,7 +12,6 @@ import BackToTop from './components/BackToTop';
 import { trackEvent } from './utils/analytics';
 
 // Code Splitting (Carregamento Inteligente)
-const SimulatorSection = lazy(() => import('./components/SimulatorSection'));
 const About = lazy(() => import('./components/About'));
 const Metrics = lazy(() => import('./components/Metrics'));
 const Services = lazy(() => import('./components/Services'));
@@ -44,9 +43,6 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <Suspense fallback={<div className="h-24" />}>
-          <SimulatorSection />
-        </Suspense>
         <Suspense fallback={<div className="h-24" />}>
           <About />
         </Suspense>
