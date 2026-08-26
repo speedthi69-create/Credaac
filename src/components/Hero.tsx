@@ -1,13 +1,21 @@
 import { memo } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import heroBg from '../assets/images/modern_empty_bank_credaac_1787704604012.jpg';
 
 const Hero = memo(function Hero() {
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-blue-950 text-white">
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-900 opacity-90 transform-gpu" />
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+        {/* Overlays to ensure text readability */}
+        <div className="absolute inset-0 bg-blue-950/80 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-950 via-blue-950/60 to-blue-950/80" />
         
         {/* Subtle grid pattern overlay */}
         <div 
@@ -65,13 +73,13 @@ const Hero = memo(function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-stretch">
-          <div className="max-w-3xl flex flex-col justify-center py-10 lg:py-0 text-center lg:text-left items-center lg:items-start mx-auto lg:mx-0">
+        <div className="flex flex-col items-center justify-center text-center mx-auto max-w-4xl py-10 lg:py-20">
+          <div className="max-w-3xl flex flex-col justify-center items-center mx-auto">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6"
+              className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold leading-tight mb-6"
             >
               Crédito rápido e sem <span className="text-green-400">burocracia</span>.
             </motion.h1>
@@ -80,7 +88,7 @@ const Hero = memo(function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-lg sm:text-xl text-blue-100 mb-10 max-w-2xl leading-relaxed mx-auto lg:mx-0"
+              className="text-lg sm:text-xl text-blue-100 mb-10 max-w-2xl leading-relaxed mx-auto"
             >
               A Credaac oferece microcrédito para motoristas de aplicativo,
               comerciantes e trabalhadores CLT - mesmo com nome negativado. Tudo online,
@@ -91,7 +99,7 @@ const Hero = memo(function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8 w-full"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full"
             >
               <a 
                 href="#contato"
@@ -106,7 +114,7 @@ const Hero = memo(function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-sm sm:text-base text-blue-200"
+              className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base text-blue-200"
             >
               <div className="flex items-center">
                 <CheckCircle2 className="h-5 w-5 text-green-400 mr-2" />
@@ -122,26 +130,6 @@ const Hero = memo(function Hero() {
               </div>
             </motion.div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative hidden lg:block h-full"
-          >
-            <div className="relative z-10 w-full h-full flex items-center justify-end">
-              <img 
-                src="https://i.imgur.com/mINuDjZ.webp" 
-                alt="Pessoa sorrindo com celular" 
-                fetchPriority="high"
-                loading="eager"
-                className="w-auto h-full max-w-full max-h-[600px] object-contain rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10" 
-                referrerPolicy="no-referrer" 
-              />
-            </div>
-            {/* Decorative background element behind image */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-800/30 rounded-full blur-3xl -z-10" />
-          </motion.div>
         </div>
       </div>
     </section>
