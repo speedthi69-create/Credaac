@@ -55,8 +55,8 @@ const Footer = memo(function Footer() {
           </div>
 
           <div className="text-center lg:text-right text-sm text-blue-200 space-y-2 lg:col-span-1">
-            <p>CNPJ: [Inserir quando disponível]</p>
-            <p>Atendimento: (11) 99999-9999 | contato@credaac.com.br</p>
+            <p>CNPJ: 67.139.892/0001-87</p>
+            <p>Atendimento: (47) 9127-9298 | solucaofinanceira@credaac.com.br</p>
           </div>
         </div>
         

@@ -31,7 +31,9 @@ export default function Navbar() {
             <a href="#depoimentos" className={`font-medium transition-colors ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-blue-100 hover:text-white'}`}>Depoimentos</a>
             <a href="#faq" className={`font-medium transition-colors ${isScrolled ? 'text-gray-600 hover:text-blue-600' : 'text-blue-100 hover:text-white'}`}>FAQ</a>
             <a 
-              href="#contato" 
+              href="https://wa.me/554791279298?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20cr%C3%A9dito."
+              target="_blank"
+              rel="noopener noreferrer"
               className={`px-6 py-2.5 rounded-full font-medium transition-all shadow-sm hover:shadow-md whitespace-nowrap ${
                 isScrolled 
                   ? 'bg-green-600 hover:bg-green-700 text-white' 
@@ -66,7 +68,9 @@ export default function Navbar() {
             <a href="#faq" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md">FAQ</a>
             <div className="pt-4 pb-2">
               <a 
-                href="#contato" 
+                href="https://wa.me/554791279298?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20cr%C3%A9dito."
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-xl font-medium"
               >

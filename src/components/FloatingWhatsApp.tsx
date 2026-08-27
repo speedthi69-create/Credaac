@@ -1,4 +1,6 @@
 import { motion } from 'motion/react';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg
@@ -12,9 +14,17 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 export default function FloatingWhatsApp() {
-  return (
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return createPortal(
     <motion.a
-      href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20cr%C3%A9dito."
+      href="https://wa.me/554791279298?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20cr%C3%A9dito."
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}
@@ -27,10 +37,11 @@ export default function FloatingWhatsApp() {
       }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-green-500/30 transition-shadow hover:shadow-xl hover:shadow-green-500/40 focus:outline-none focus:ring-4 focus:ring-green-500/50 md:bottom-8 md:right-8 lg:h-16 lg:w-16"
+      className="fixed bottom-6 right-6 z-[100] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-green-500/30 transition-shadow hover:shadow-xl hover:shadow-green-500/40 focus:outline-none focus:ring-4 focus:ring-green-500/50 md:bottom-8 md:right-8 lg:h-16 lg:w-16"
       aria-label="Falar conosco no WhatsApp"
     >
       <WhatsAppIcon className="h-7 w-7 lg:h-8 lg:w-8" />
-    </motion.a>
+    </motion.a>,
+    document.body
   );
 }

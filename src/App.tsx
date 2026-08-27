@@ -8,7 +8,6 @@ import { motion, useScroll, useSpring } from 'motion/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
-import BackToTop from './components/BackToTop';
 import { trackEvent } from './utils/analytics';
 
 // Code Splitting (Carregamento Inteligente)
@@ -35,7 +34,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-green-200 selection:text-green-900 scroll-smooth transform-gpu">
+    <div className="min-h-screen bg-white font-sans selection:bg-green-200 selection:text-green-900 scroll-smooth">
       <motion.div
         className="fixed top-0 left-0 right-0 h-1.5 bg-green-500 origin-left z-50 transform-gpu will-change-transform"
         style={{ scaleX }}
@@ -72,7 +71,6 @@ export default function App() {
         <Footer />
       </Suspense>
       <FloatingWhatsApp />
-      <BackToTop />
     </div>
   );
 }

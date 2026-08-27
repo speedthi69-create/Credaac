@@ -122,7 +122,9 @@ export default function HowItWorks() {
           className="mt-20 text-center"
         >
           <a 
-            href="#contato"
+            href="https://wa.me/554791279298?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20cr%C3%A9dito."
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 text-lg"
           >
             Solicitar crédito agora
