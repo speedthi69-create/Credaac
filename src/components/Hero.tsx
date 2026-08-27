@@ -14,12 +14,12 @@ const Hero = memo(function Hero() {
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         {/* Overlays to ensure text readability */}
-        <div className="absolute inset-0 bg-blue-950/80 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-blue-950/80" />
         <div className="absolute inset-0 bg-gradient-to-t from-blue-950 via-blue-950/60 to-blue-950/80" />
         
         {/* Subtle grid pattern overlay */}
         <div 
-          className="absolute inset-0 opacity-[0.03] transform-gpu"
+          className="absolute inset-0 opacity-[0.03]"
           style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}
         />
 
@@ -30,7 +30,7 @@ const Hero = memo(function Hero() {
             opacity: [0.3, 0.5, 0.3],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-40 -right-40 w-[800px] h-[800px] rounded-full bg-blue-500/20 blur-[100px] transform-gpu will-change-transform" 
+          className="absolute -top-40 -right-40 w-[800px] h-[800px] rounded-full bg-blue-500/20 blur-[100px]" 
         />
         
         <motion.div 
@@ -39,7 +39,7 @@ const Hero = memo(function Hero() {
             opacity: [0.2, 0.4, 0.2],
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-[-20%] -left-20 w-[600px] h-[600px] rounded-full bg-green-500/20 blur-[100px] transform-gpu will-change-transform" 
+          className="absolute bottom-[-20%] -left-20 w-[600px] h-[600px] rounded-full bg-green-500/20 blur-[100px]" 
         />
 
         <motion.div 
@@ -48,15 +48,15 @@ const Hero = memo(function Hero() {
             opacity: [0.1, 0.3, 0.1],
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-[20%] left-[30%] w-[400px] h-[400px] rounded-full bg-cyan-400/10 blur-[80px] transform-gpu will-change-transform" 
+          className="absolute top-[20%] left-[30%] w-[400px] h-[400px] rounded-full bg-cyan-400/10 blur-[80px]" 
         />
 
         {/* Animated flow lines */}
-        <div className="absolute inset-0 opacity-20 transform-gpu">
+        <div className="absolute inset-0 opacity-20">
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute h-[1px] bg-gradient-to-r from-transparent via-blue-300 to-transparent w-full transform-gpu will-change-transform"
+              className="absolute h-[1px] bg-gradient-to-r from-transparent via-blue-300 to-transparent w-full"
               style={{ top: `${20 + i * 15}%`, left: '-100%' }}
               animate={{
                 left: ['100%', '-100%'],
